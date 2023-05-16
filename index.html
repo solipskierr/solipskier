@@ -33,35 +33,50 @@
             animation: bounce 1s infinite alternate;
             cursor: pointer;
             transition: background-color 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
         }
 
         .text:hover {
             transform: scale(1.05);
-            background-color: #B3E5FF;
+            background-color: #225cfb;
             transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
             animation: none;
         }
 
-        @keyframes bounce {
-            0% {
-                transform: translateY(0);
-            }
-            100% {
-                transform: translateY(-10px);
-            }
-        }
-        
         .text::after {
-            content: "Click Me!";
+            content: "Click here!";
             font-size: 16px;
-            color: #4CB8ED;
+            color: #ffffff;
             display: block;
             margin-top: 10px;
+        }
+
+        .text::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .text:hover::before {
+            opacity: 1;
+        }
+
+        .text::selection {
+            background-color: #fff;
+            color: #225cfb;
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to Solipskier - Special Edition</h1>
+    <h1>Welcome to Solipskier</h1>
     <div class="text" id="displayText"></div>
 
     <script>
