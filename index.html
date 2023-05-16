@@ -3,8 +3,9 @@
 <head>
     <style>
         @keyframes flicker {
-            0% { color: #2B2B2B; }
-            50% { color: #383838; }
+            0% { color: black; }
+            50% { color: black; }
+            51% { color: white; }
             100% { color: white; }
         }
 
@@ -15,22 +16,36 @@
             text-align: center;
             text-transform: uppercase;
             animation: flicker 1s infinite;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        }
+
+        .date-time {
+            font-size: 20px;
+            text-align: center;
+            margin-top: 20px;
         }
 
         body {
-            background-color: #000;
+            background-color: black;
             color: white;
             margin: 0;
             padding: 0;
             height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
     </style>
 </head>
 <body>
     <h1>SOLIPSKIER</h1>
+    <div class="date-time">
+        <script>
+            var today = new Date();
+            var date = today.toLocaleDateString();
+            var time = today.toLocaleTimeString();
+            document.write(date + " " + time);
+        </script>
+    </div>
 </body>
 </html>
