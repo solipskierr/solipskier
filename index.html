@@ -14,30 +14,20 @@
             100% { filter: brightness(100%); }
         }
 
-        h1, .date-time {
-            animation: brightness 2s infinite alternate;
-        }
-
         h1 {
             font-size: 80px;
             font-family: "Helvetica Neue", Arial, sans-serif;
             font-weight: bold;
             text-align: center;
             text-transform: uppercase;
-            opacity: 0;
-            animation-delay: 1s;
-            animation-fill-mode: forwards;
-            animation-timing-function: linear;
+            animation: flicker 1s infinite;
         }
 
         .date-time {
             font-size: 40px;
-            font-family: "Helvetica Neue", Arial, sans-serif;
             text-align: center;
-            opacity: 0;
-            animation-delay: 1s;
-            animation-fill-mode: forwards;
-            animation-timing-function: linear;
+            margin-top: 20px;
+            animation: brightness 2s infinite alternate;
         }
 
         body {
