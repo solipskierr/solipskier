@@ -3,21 +3,30 @@
 <head>
     <style>
         @keyframes flicker {
-            0% { color: blue; }
-            50% { color: black; }
-            100% { color: darkgrey; }
+            0% { color: #2B2B2B; }
+            50% { color: #383838; }
+            100% { color: white; }
         }
 
         h1 {
-            font-size: 60px;
+            font-size: 80px;
+            font-family: "Helvetica Neue", Arial, sans-serif;
             font-weight: bold;
             text-align: center;
+            text-transform: uppercase;
             animation: flicker 1s infinite;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
         body {
             background-color: #000;
             color: white;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
         }
     </style>
 </head>
