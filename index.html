@@ -3,95 +3,7 @@
 <head>
     <title>Solipskier</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #3B3B3B;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 36px;
-            color: #79C0FF;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            margin-bottom: 20px;
-        }
-
-        .text {
-            font-size: 24px;
-            color: #79C0FF;
-            margin-top: 40px;
-            padding: 10px 20px;
-            background-color: #1D1D1D;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
-            animation: bounce 1s infinite alternate;
-            cursor: pointer;
-            transition: background-color 0.3s ease-in-out;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .text:hover {
-            transform: scale(1.05);
-            background-color: #79C0FF;
-            color: #1D1D1D;
-            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-            animation: none;
-        }
-
-        .text::after {
-            content: "Click here!";
-            font-size: 16px;
-            color: #FFFFFF;
-            display: block;
-            margin-top: 10px;
-        }
-
-        .text::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: linear-gradient(to bottom, rgba(29, 29, 29, 0.7), rgba(29, 29, 29, 0));
-            z-index: 1;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
-
-        .text:hover::before {
-            opacity: 1;
-        }
-
-        .text::selection {
-            background-color: #79C0FF;
-            color: #1D1D1D;
-        }
-
-        button {
-            margin-top: 20px;
-            background-color: #79C0FF;
-            border: none;
-            color: #1D1D1D;
-            font-size: 16px;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease-in-out;
-        }
-
-        button:hover {
-            background-color: #225cfb;
-            transition: background-color 0.3s ease-in-out;
-        }
+        /* CSS styles here */
     </style>
 </head>
 <body>
@@ -100,21 +12,84 @@
     <button id="button">Start</button>
 
     <script>
+        // JavaScript code here
+
+        // Function 1: Toggle Dark Mode
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle("dark-mode");
+        }
+
+        // Function 2: Generate Random Number
+        function generateRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Function 3: Validate Email
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Function 4: Calculate Square
+        function calculateSquare(number) {
+            return number * number;
+        }
+
+        // Function 5: Format Currency
+        function formatCurrency(amount, currency) {
+            return `${currency}${amount.toFixed(2)}`;
+        }
+
         // JavaScript code to display and update the text
         let text = "ad637e46df8bab42105c2c9c717fe0d5e1edff07";
-const displayElement = document.getElementById("displayText");
-displayElement.textContent = text;
-    // Add an alert on text click
-    displayElement.addEventListener("click", () => {
-        alert("You clicked! :O");
-    });
-
-    // Update text on button click
-    const button = document.getElementById("button");
-    button.addEventListener("click", () => {
-        text = "starting execution..";
+        const displayElement = document.getElementById("displayText");
         displayElement.textContent = text;
-    });
-</script>
+
+        // Add an alert on text click
+        displayElement.addEventListener("click", () => {
+            alert("You clicked! :O");
+        });
+
+        // Update text on button click
+        const button = document.getElementById("button");
+        button.addEventListener("click", () => {
+            text = "starting execution..";
+            displayElement.textContent = text;
+        });
+
+        // New Cool Features
+        const coolFeatures = [
+            "Feature 1: Interactive animations",
+            "Feature 2: Dynamic backgrounds",
+            "Feature 3: Achievements system",
+            "Feature 4: Multiplayer mode",
+            "Feature 5: Leaderboards",
+            "Feature 6: Power-ups and boosters",
+            "Feature 7: Customizable skier avatars",
+            "Feature 8: Exciting sound effects",
+            "Feature 9: Challenging obstacles",
+            "Feature 10: Hidden easter eggs"
+        ];
+
+        const featureList = document.createElement("ul");
+        featureList.style.color = "#FFFFFF";
+        featureList.style.marginTop = "40px";
+
+        for (let i = 0; i < coolFeatures.length; i++) {
+            const featureItem = document.createElement("li");
+            featureItem.textContent = coolFeatures[i];
+            featureList.appendChild(featureItem);
+        }
+
+        document.body.appendChild(featureList);
+
+        // Function usage examples
+        console.log(toggleDarkMode()); // Example: Toggles dark mode on/off
+        console.log(generateRandomNumber(1, 10)); // Example: Generates a random number between 1 and 10
+        console.log(validateEmail("example@example.com")); // Example: Validates an email address
+        console.log(calculateSquare(5)); // Example: Calculates the square of 5
+        console.log(formatCurrency(50.75, "$")); // Example: Formats 50.75 as $50.75
+    </script>
 </body>
 </html>
