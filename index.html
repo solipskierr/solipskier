@@ -14,21 +14,30 @@
             100% { filter: brightness(100%); }
         }
 
+        h1, .date-time {
+            animation: brightness 2s infinite alternate;
+        }
+
         h1 {
             font-size: 80px;
             font-family: "Helvetica Neue", Arial, sans-serif;
             font-weight: bold;
             text-align: center;
             text-transform: uppercase;
-            animation: flicker 1s infinite;
+            opacity: 0;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
         }
 
         .date-time {
             font-size: 40px;
+            font-family: "Helvetica Neue", Arial, sans-serif;
             text-align: center;
-            text-transform: uppercase;
-            margin-top: 20px;
-            animation: brightness 2s infinite alternate;
+            opacity: 0;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
         }
 
         body {
@@ -43,16 +52,19 @@
             justify-content: center;
         }
     </style>
-</head>
-<body>
-    <h1>SOLIPSKIER</h1>
-    <div class="date-time">
-        <script>
+    <script>
+        function updateTime() {
             var today = new Date();
             var date = today.toLocaleDateString();
             var time = today.toLocaleTimeString();
-            document.write(date + " " + time);
-        </script>
-    </div>
+            document.getElementById("date-time").textContent = date + " " + time;
+        }
+
+        setInterval(updateTime, 2000); // Update time every 2 seconds
+    </script>
+</head>
+<body>
+    <h1>SOLIPSKIER</h1>
+    <div class="date-time" id="date-time"></div>
 </body>
 </html>
