@@ -97,93 +97,55 @@
             list-style-type: disc;
             margin-left: 40px;
         }
-    </style>
+
+        /* Dark mode styles */
+        .dark-mode {
+            background-color: #1D1D1D;
+            color: #FFFFFF;
+        }
+
+        .dark-mode button {
+            background-color: #FFFFFF;
+            color: #1D1D1D;
+        }
+
+        .dark-mode .text:hover
+        {
+background-color: #79C0FF;
+color: #1D1D1D;
+}
+</style>
+
 </head>
 <body>
     <h1>Welcome to Solipskier</h1>
     <div class="text" id="displayText"></div>
-    <button id="button">Start</button>
+    <button id="toggleButton">Toggle Dark Mode</button>
 
     <script>
         // JavaScript code here
-
-        // Function 1: Toggle
+    
         // Function 1: Toggle Dark Mode
         function toggleDarkMode() {
             const body = document.body;
             body.classList.toggle("dark-mode");
         }
-
-        // Function 2: Generate Random Number
-        function generateRandomNumber(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-
-        // Function 3: Validate Email
-        function validateEmail(email) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
-        }
-
-        // Function 4: Calculate Square
-        function calculateSquare(number) {
-            return number * number;
-        }
-
-        // Function 5: Format Currency
-        function formatCurrency(amount, currency) {
-            return `${currency}${amount.toFixed(2)}`;
-        }
-
+    
         // JavaScript code to display and update the text
         let text = "ad637e46df8bab42105c2c9c717fe0d5e1edff07";
         const displayElement = document.getElementById("displayText");
         displayElement.textContent = text;
-
+    
         // Add an alert on text click
         displayElement.addEventListener("click", () => {
             alert("You clicked! :O");
         });
-
-        // Update text on button click
-        const button = document.getElementById("button");
-        button.addEventListener("click", () => {
-            text = "starting execution..";
-            displayElement.textContent = text;
+    
+        // Toggle dark mode on button click
+        const toggleButton = document.getElementById("toggleButton");
+        toggleButton.addEventListener("click", () => {
+            toggleDarkMode();
         });
-
-        // New Cool Features
-        const coolFeatures = [
-            "Feature 1: Interactive animations",
-            "Feature 2: Dynamic backgrounds",
-            "Feature 3: Achievements system",
-            "Feature 4: Multiplayer mode",
-            "Feature 5: Leaderboards",
-            "Feature 6: Power-ups and boosters",
-            "Feature 7: Customizable skier avatars",
-            "Feature 8: Exciting sound effects",
-            "Feature 9: Challenging obstacles",
-            "Feature 10: Hidden easter eggs"
-        ];
-
-        const featureList = document.createElement("ul");
-        featureList.style.color = "#FFFFFF";
-        featureList.style.marginTop = "40px";
-
-        for (let i = 0; i < coolFeatures.length; i++) {
-            const featureItem = document.createElement("li");
-            featureItem.textContent = coolFeatures[i];
-            featureList.appendChild(featureItem);
-        }
-
-        document.body.appendChild(featureList);
-
-        // Function usage examples
-        console.log(toggleDarkMode()); // Example: Toggles dark mode on/off
-        console.log(generateRandomNumber(1, 10)); // Example: Generates a random number between 1 and 10
-        console.log(validateEmail("example@example.com")); // Example: Validates an email address
-        console.log(calculateSquare(5)); // Example: Calculates the square of 5
-        console.log(formatCurrency(50.75, "$")); // Example: Formats 50.75 as $50.75
     </script>
-</body>
-</html>
+    </body>
+    </html>
