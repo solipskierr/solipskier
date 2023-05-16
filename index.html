@@ -52,19 +52,16 @@
             justify-content: center;
         }
     </style>
-    <script>
-        function updateTime() {
-            var today = new Date();
-            var date = today.toLocaleDateString();
-            var time = today.toLocaleTimeString();
-            document.getElementById("date-time").textContent = date + " " + time;
-        }
-
-        setInterval(updateTime, 2000); // Update time every 2 seconds
-    </script>
 </head>
 <body>
     <h1>SOLIPSKIER</h1>
-    <div class="date-time" id="date-time"></div>
+    <div class="date-time">
+        <script>
+            var today = new Date();
+            var date = today.toLocaleDateString();
+            var time = today.toLocaleTimeString();
+            document.write(date + " " + time);
+        </script>
+    </div>
 </body>
 </html>
